@@ -1,15 +1,15 @@
 # Web3 USDC Dashboard
 
-A modern Web3 dashboard for managing USDC tokens on Sepolia testnet with MetaMask integration.
+A modern Web3 dashboard for managing USDC tokens on the Sepolia testnet with MetaMask integration.
 
 ## Features
 
-- Connect MetaMask wallet
+- Connect your MetaMask wallet
 - View USDC balance and transaction history
 - Send USDC transfers
 - Interactive charts and analytics
 - Dark mode support
-- Responsive design
+- Fully responsive design
 
 ## Tech Stack
 
@@ -30,78 +30,80 @@ A modern Web3 dashboard for managing USDC tokens on Sepolia testnet with MetaMas
 
 ### Installation
 
-1. Install dependencies:
+1. Clone the repository and install dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
-2. Create `.env.local` file:
+2. Create a `.env.local` file:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_ETHERSCAN_API_KEY=your_etherscan_api_key_here
-\`\`\`
+```
 
-1. Run development server:
+3. Run the development server:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Environment Variables
 
-| Variable            | Description                          | Required |
-| ------------------- | ------------------------------------ | -------- |
-| `ETHERSCAN_API_KEY` | Etherscan API key (server-side only) | Yes      |
+| Variable                        | Description                          | Required |
+| ------------------------------- | ------------------------------------ | -------- |
+| `NEXT_PUBLIC_ETHERSCAN_API_KEY` | Etherscan API key (server-side only) | Yes      |
 
-The API key is used in server-side Route Handlers (`/app/api/etherscan/*`) to proxy requests to Etherscan API, keeping your key secure and never exposed to the client.
+The API key is used in server-side Route Handlers (`/app/api/etherscan/*`) to proxy requests to the Etherscan API, keeping your key secure and never exposed to the client.
 
 ## Project Structure
 
-\`\`\`
+```
 ├── app/
-│ ├── api/etherscan/ # Server-side API routes
-│ ├── layout.tsx # Root layout
-│ ├── page.tsx # Dashboard page
-│ └── globals.css # Global styles
+│   ├── api/etherscan/      # Server-side API routes
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Dashboard page
+│   └── globals.css         # Global styles
 ├── components/
-│ ├── dashboard/ # Dashboard components
-│ ├── wallet/ # Wallet components
-│ └── ui/ # shadcn/ui components
-├── stores/ # Zustand stores
-├── hooks/ # Custom hooks
-├── lib/ # Utilities
-└── types/ # TypeScript types
-\`\`\`
+│   ├── dashboard/          # Dashboard components
+│   ├── wallet/             # Wallet components
+│   └── ui/                 # shadcn/ui components
+├── stores/                 # Zustand stores
+├── hooks/                  # Custom hooks
+├── lib/                    # Utilities
+└── types/                  # TypeScript types
+```
 
 ## Testing
 
 Run tests:
 
-\`\`\`bash
+```bash
 npm test
-\`\`\`
+```
 
 ## Deploy to Vercel
 
-1. Push to GitHub
-2. Import project on [Vercel](https://vercel.com)
+1. Push the project to GitHub.
+2. Import the project on [Vercel](https://vercel.com).
 3. Add environment variable:
-   - Name: `ETHERSCAN_API_KEY`
+
+   - Name: `NEXT_PUBLIC_ETHERSCAN_API_KEY`
    - Value: Your Etherscan API key
+
 4. Deploy
 
 ## Usage
 
-1. Click "Connect Wallet" to connect MetaMask
-2. View your USDC balance and transaction history
-3. Use the transfer form to send USDC
+1. Click "Connect Wallet" to connect MetaMask.
+2. View your USDC balance and transaction history.
+3. Use the transfer form to send USDC.
 
 ## Sepolia Testnet
 
-This app uses Sepolia testnet. Get test ETH from:
+This app uses the Sepolia testnet. Get test ETH from:
 
 - [Alchemy Faucet](https://sepoliafaucet.com/)
 - [Infura Faucet](https://www.infura.io/faucet/sepolia)
