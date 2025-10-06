@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import type React from "react";
@@ -91,12 +92,10 @@ export function TransferForm() {
       setRecipient("");
       setAmount("");
       setStatus({ status: "idle" });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Transfer error:", error);
       let errorMsg = "Transaction failed";
-      if (typeof error === "object" && error !== null) {
-        errorMsg = error.reason || error.message || errorMsg;
-      }
+      errorMsg = error?.reason || error?.message || errorMsg;
       errorMsg = errorMsg.replace(/^execution reverted: /, "");
       toast({
         variant: "destructive",

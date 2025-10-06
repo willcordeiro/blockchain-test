@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
 import type { EtherscanTransaction } from "@/types/transaction";
 import { getUSDCBalance, getUSDCTransfers } from "@/lib/etherscan-service";
