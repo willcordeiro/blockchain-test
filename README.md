@@ -109,3 +109,7 @@ This app uses the Sepolia testnet. Get test ETH from:
 - [Infura Faucet](https://www.infura.io/faucet/sepolia)
 
 USDC Contract: `0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238`
+
+## Live Project
+
+- [link](https://blockchain-test-gray.vercel.app/)
