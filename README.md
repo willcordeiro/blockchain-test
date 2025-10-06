@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web3 USDC Dashboard
 
-## Getting Started
+A modern Web3 dashboard for managing USDC tokens on Sepolia testnet with MetaMask integration.
 
-First, run the development server:
+## Features
 
-```bash
+- Connect MetaMask wallet
+- View USDC balance and transaction history
+- Send USDC transfers
+- Interactive charts and analytics
+- Dark mode support
+- Responsive design
+
+## Tech Stack
+
+- Next.js 15 (Turbopack)
+- Ethers.js v6
+- Zustand
+- TailwindCSS v4
+- Chart.js
+- Framer Motion
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- MetaMask browser extension
+- Etherscan API key ([Get one here](https://etherscan.io/apis))
+
+### Installation
+
+1. Install dependencies:
+
+\`\`\`bash
+npm install
+\`\`\`
+
+2. Create `.env.local` file:
+
+\`\`\`env
+NEXT_PUBLIC_ETHERSCAN_API_KEY=your_etherscan_api_key_here
+\`\`\`
+
+1. Run development server:
+
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable            | Description                          | Required |
+| ------------------- | ------------------------------------ | -------- |
+| `ETHERSCAN_API_KEY` | Etherscan API key (server-side only) | Yes      |
 
-## Learn More
+The API key is used in server-side Route Handlers (`/app/api/etherscan/*`) to proxy requests to Etherscan API, keeping your key secure and never exposed to the client.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+\`\`\`
+├── app/
+│ ├── api/etherscan/ # Server-side API routes
+│ ├── layout.tsx # Root layout
+│ ├── page.tsx # Dashboard page
+│ └── globals.css # Global styles
+├── components/
+│ ├── dashboard/ # Dashboard components
+│ ├── wallet/ # Wallet components
+│ └── ui/ # shadcn/ui components
+├── stores/ # Zustand stores
+├── hooks/ # Custom hooks
+├── lib/ # Utilities
+└── types/ # TypeScript types
+\`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Testing
 
-## Deploy on Vercel
+Run tests:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+\`\`\`bash
+npm test
+\`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy to Vercel
+
+1. Push to GitHub
+2. Import project on [Vercel](https://vercel.com)
+3. Add environment variable:
+   - Name: `ETHERSCAN_API_KEY`
+   - Value: Your Etherscan API key
+4. Deploy
+
+## Usage
+
+1. Click "Connect Wallet" to connect MetaMask
+2. View your USDC balance and transaction history
+3. Use the transfer form to send USDC
+
+## Sepolia Testnet
+
+This app uses Sepolia testnet. Get test ETH from:
+
+- [Alchemy Faucet](https://sepoliafaucet.com/)
+- [Infura Faucet](https://www.infura.io/faucet/sepolia)
+
+USDC Contract: `0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238`
